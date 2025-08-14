@@ -1,56 +1,69 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr-CA">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Ménage Piquant — Service de ménage sexy (sans contact)</title>
-  <meta name="description" content="Ménage Piquant : service de ménage sexy, sans contact, pour rendre l’utile à l’agréable. Disponible dans votre région. Contactez-moi pour plus d'infos." />
+  <title>Ménage Piquant — Service de ménage sexy (sans contact) • 2025</title>
+  <meta name="description" content="Ménage Piquant : service de ménage sexy, sans contact. Rendre l’utile à l’agréable, avec élégance et discrétion. Prise de rendez-vous en ligne. Montréal et environs." />
+  <meta name="theme-color" content="#0f0f12" />
   <style>
     :root{
-      --bg:#0f0f12; --fg:#f6f6f8; --muted:#b9b9c3; --brand:#ff4d8d; --accent:#ffd166; --card:#17171c; --line:#26262e;
+      --bg:#0f0f12; --fg:#f6f6f8; --muted:#b9b9c3; --brand:#ff4d8d; --accent:#ffd166;
+      --card:#17171c; --line:#26262e; --ok:#1b2e22; --okb:#2b4b38; --err:#2e1b1b; --errb:#4b2b2b;
     }
-    *{box-sizing:border-box} html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
     a{color:var(--fg);text-decoration:none}
-    .wrap{max-width:1100px;margin:0 auto;padding:24px}
-    header{position:sticky;top:0;backdrop-filter:saturate(180%) blur(8px);background:linear-gradient(180deg, rgba(15,15,18,.9), rgba(15,15,18,.6));border-bottom:1px solid var(--line);z-index:20}
+    .wrap{max-width:1120px;margin:0 auto;padding:20px}
+    header{position:sticky;top:0;z-index:20;background:linear-gradient(180deg, rgba(15,15,18,.9), rgba(15,15,18,.6));backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--line)}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.3px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
+    .logo{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:8px;background:conic-gradient(from 210deg, var(--brand), var(--accent));border:1px solid var(--line)}
     .badge{display:inline-flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:12px;color:var(--muted)}
     .btn{display:inline-block;padding:12px 18px;border-radius:12px;border:1px solid var(--line);background:var(--brand);color:#fff;font-weight:700;transition:transform .2s ease, box-shadow .2s ease}
     .btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,77,141,.25)}
-    .ghost{background:transparent;color:var(--fg)}
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;padding:42px 0}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
-    h1{font-size:clamp(28px,4.2vw,56px);line-height:1.04;margin:0 0 14px}
-    h2{font-size:clamp(22px,3vw,36px);margin:28px 0 12px}
-    p{color:var(--muted);line-height:1.6;margin:8px 0}
-    ul{margin:10px 0 0 18px;color:var(--muted);line-height:1.6}
-    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+    .btn.ghost{background:transparent;color:var(--fg)}
+    .btn.small{padding:10px 14px;font-size:14px}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;padding:40px 0}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+    h1{font-size:clamp(28px,4.2vw,56px);line-height:1.04;margin:0 0 12px}
+    h2{font-size:clamp(22px,3vw,36px);margin:24px 0 10px}
+    h3{font-size:clamp(18px,2.2vw,24px);margin:18px 0 8px}
+    p{color:var(--muted);line-height:1.65;margin:8px 0}
+    ul{margin:8px 0 0 18px;color:var(--muted);line-height:1.7}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
     .chip{border:1px solid var(--line);background:transparent;color:var(--fg);padding:8px 12px;border-radius:999px;font-size:13px}
     .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
     .note{font-size:13px;color:var(--muted)}
     footer{border-top:1px solid var(--line);margin-top:36px}
-    input,textarea,select{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:#0b0b0e;color:var(--fg)}
-    label{font-size:13px;color:var(--muted)}
-    .ok{background:#1b2e22;border-color:#2b4b38}
-    .err{background:#2e1b1b;border-color:#4b2b2b}
     .center{text-align:center}
-    @media (max-width:900px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}}
+    input,textarea,select{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:#0b0b0e;color:var(--fg);outline:none}
+    label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+    .state.ok{background:var(--ok);border-color:var(--okb)}
+    .state.err{background:var(--err);border-color:var(--errb)}
+    .hl{color:#fff}
+    .policy{font-size:13px;color:var(--muted);line-height:1.6}
+    .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;background:#101012;border:1px solid var(--line);border-radius:8px;padding:2px 6px}
+    @media (max-width:980px){.hero{grid-template-columns:1fr}.grid3{grid-template-columns:1fr}.row,.row3{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
   <header>
     <div class="wrap nav">
       <div class="brand">
-        <span style="display:inline-grid;place-items:center;width:28px;height:28px;border-radius:8px;background:conic-gradient(from 200deg, var(--brand), var(--accent));border:1px solid var(--line)"></span>
+        <span class="logo" aria-hidden="true"></span>
         <span>Ménage Piquant</span>
         <span class="badge">Sans contact • Plaisir visuel</span>
       </div>
       <nav class="nav" style="gap:10px">
         <a href="#offre" class="badge">L’offre</a>
+        <a href="#rdv" class="badge">Prise de rendez-vous</a>
         <a href="#zone" class="badge">Zone</a>
-        <a href="#contact" class="btn">Contact</a>
+        <a href="#faq" class="badge">FAQ</a>
+        <a href="#contact" class="btn small">Contact</a>
       </nav>
     </div>
   </header>
@@ -59,7 +72,7 @@
     <section class="hero" id="offre">
       <div>
         <h1>Rendre l’utile à l’agréable, en toute délicatesse.</h1>
-        <p>Je propose un <strong>service de ménage sexy</strong> où l’élégance rencontre l’efficacité : <strong>tenue sexy</strong>, ambiance légère, et respect absolu des limites — <strong>sans contact</strong>, tout en discrétion.</p>
+        <p>Je propose un <strong>service de ménage sexy</strong> où l’élégance rencontre l’efficacité&nbsp;: <span class="hl">tenue sexy</span>, ambiance légère, et respect absolu des limites — <strong>sans contact</strong>, tout en discrétion.</p>
         <div class="chips">
           <span class="chip">Service discret</span>
           <span class="chip">Ambiance légère</span>
@@ -67,10 +80,10 @@
           <span class="chip">Moment visuel</span>
         </div>
         <div class="cta">
-          <a href="#contact" class="btn">Contactez-moi</a>
+          <a href="#rdv" class="btn">Prendre rendez-vous</a>
           <a href="#details" class="btn ghost">En savoir plus</a>
         </div>
-        <p class="note">Photos et détails supplémentaires disponibles sur demande, pour les personnes réellement intéressées.</p>
+        <p class="note">Pour préserver la discrétion, <em>tarifs communiqués en privé</em>. Photos disponibles sur demande, pour personnes sérieuses.</p>
       </div>
 
       <div class="card">
@@ -78,37 +91,174 @@
         <ul>
           <li>Ménage complet ou ciblé selon vos priorités</li>
           <li>Prestation visuelle et suggestive, <em>sans contact</em></li>
-          <li>Discrétion, ponctualité, et respect des limites</li>
+          <li>Discrétion, ponctualité, respect des limites et de l’espace</li>
           <li>Options d’ambiance : musique légère, éclairage doux</li>
         </ul>
-        <p class="note">Conseil : préparez une liste courte des zones prioritaires pour optimiser le temps sur place.</p>
+        <p class="note">Astuce&nbsp;: préparez une courte liste des zones prioritaires pour optimiser le temps sur place.</p>
       </div>
     </section>
 
-    <section class="grid">
+    <section class="grid3">
       <div class="card">
-        <h2>Version classique</h2>
-        <p>Et si faire le ménage devenait votre moment préféré de la semaine ? Avec mon <strong>service de ménage sexy</strong>, je <strong>rends l’utile à l’agréable</strong> : prestation sensuelle et discrète, <strong>sans contact</strong>. En <strong>tenue sexy</strong>, je nettoie pendant que vous profitez du spectacle… en toute élégance.</p>
+        <h3>Version classique</h3>
+        <p>Et si faire le ménage devenait votre moment préféré de la semaine&nbsp;? Avec mon <strong>service de ménage sexy</strong>, je <strong>rends l’utile à l’agréable</strong>&nbsp;: prestation sensuelle et discrète, <strong>sans contact</strong>. En <strong>tenue sexy</strong>, je nettoie pendant que vous profitez du spectacle… en toute élégance.</p>
       </div>
       <div class="card">
-        <h2>Version réseaux sociaux</h2>
-        <p>Du ménage… mais pas comme vous l’imaginez. Tenue sexy, ambiance légère, vous en simple spectateur : <strong>zéro contact</strong>. Oui, je fais tout moi-même et je le fais bien. Un brin de séduction, beaucoup de propreté, juste ce qu’il faut de piquant. DM pour détails.</p>
+        <h3>Version réseaux sociaux</h3>
+        <p>Du ménage… mais pas comme vous l’imaginez. Tenue sexy, ambiance légère, vous en simple spectateur : <strong>zéro contact</strong>. Un brin de séduction, beaucoup de propreté, juste ce qu’il faut de piquant. DM pour détails.</p>
       </div>
       <div class="card">
-        <h2>Version subtile</h2>
-        <p>Et si la routine devenait un petit plaisir coupable ? Un service où le raffinement rencontre la sensualité. Une présence discrète, une tenue séduisante, un instant à savourer du regard. <strong>Sans contact</strong>, sans excès, pour transformer l’ordinaire en expérience mémorable.</p>
+        <h3>Version subtile</h3>
+        <p>Et si la routine devenait un petit plaisir coupable&nbsp;? Une présence discrète, une tenue séduisante, un instant à savourer du regard. <strong>Sans contact</strong>, sans excès, pour transformer l’ordinaire en expérience mémorable.</p>
       </div>
     </section>
 
-    <section class="card" id="zone" style="margin-top:16px">
+    <!-- PRISE DE RENDEZ-VOUS -->
+    <section class="card" id="rdv" style="margin-top:18px">
+      <h2>Prise de rendez-vous</h2>
+      <p>Choisissez vos préférences et envoyez une demande. Je confirme ensuite l’horaire et les détails en privé.</p>
+
+      <form id="rdvForm" novalidate>
+        <div class="row">
+          <div>
+            <label for="prenom">Votre prénom</label>
+            <input id="prenom" name="prenom" type="text" placeholder="Alex" required />
+          </div>
+          <div>
+            <label for="contactMethod">Préférence de contact</label>
+            <select id="contactMethod" name="contactMethod" required>
+              <option value="" disabled selected>Choisir…</option>
+              <option value="SMS">SMS</option>
+              <option value="Appel">Appel</option>
+              <option value="Courriel">Courriel</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="contactFields" class="row" style="margin-top:8px">
+          <div>
+            <label for="phone">Téléphone (si SMS/Appel)</label>
+            <input id="phone" name="phone" type="tel" placeholder="+1 514…" />
+          </div>
+          <div>
+            <label for="email">Courriel (si Courriel)</label>
+            <input id="email" name="email" type="email" placeholder="vous@exemple.com" />
+          </div>
+        </div>
+
+        <div class="row3" style="margin-top:8px">
+          <div>
+            <label for="date">Date souhaitée</label>
+            <input id="date" name="date" type="date" required />
+          </div>
+          <div>
+            <label for="heure">Heure d’arrivée</label>
+            <input id="heure" name="heure" type="time" required />
+          </div>
+          <div>
+            <label for="duree">Durée</label>
+            <select id="duree" name="duree" required>
+              <option value="" disabled selected>Choisir…</option>
+              <option>1 h</option>
+              <option>1 h 30</option>
+              <option>2 h</option>
+              <option>3 h</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row" style="margin-top:8px">
+          <div>
+            <label for="typeService">Type de service</label>
+            <select id="typeService" name="typeService" required>
+              <option value="" disabled selected>Choisir…</option>
+              <option value="Classique">Classique (régulier)</option>
+              <option value="Express">Express (zones ciblées)</option>
+              <option value="Grand ménage">Grand ménage (en profondeur)</option>
+            </select>
+          </div>
+          <div>
+            <label for="tenue">Tenue (suggestive, toujours élégante)</label>
+            <select id="tenue" name="tenue" required>
+              <option value="" disabled selected>Choisir…</option>
+              <option>Niveau léger</option>
+              <option>Niveau moyen</option>
+              <option>Niveau audacieux (toujours chic)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row" style="margin-top:8px">
+          <div>
+            <label for="ambiance">Ambiance</label>
+            <select id="ambiance" name="ambiance">
+              <option>Standard</option>
+              <option>Musique douce</option>
+              <option>Éclairage tamisé</option>
+              <option>Silence</option>
+            </select>
+          </div>
+          <div>
+            <label for="addOns">Options (facultatif)</label>
+            <select id="addOns" name="addOns" multiple size="3">
+              <option value="Cuisine">Cuisine ciblée</option>
+              <option value="Salle de bain">Salle de bain ciblée</option>
+              <option value="Vitres">Vitres/miroirs</option>
+            </select>
+            <p class="note">Maintenez <span class="kbd">Ctrl</span> (ou <span class="kbd">⌘</span>) pour sélectionner plusieurs options.</p>
+          </div>
+        </div>
+
+        <div class="row" style="margin-top:8px">
+          <div>
+            <label for="adresse">Adresse / Quartier</label>
+            <input id="adresse" name="adresse" type="text" placeholder="Plateau, Montréal…" required />
+          </div>
+          <div>
+            <label for="instructions">Instructions ou priorités</label>
+            <input id="instructions" name="instructions" type="text" placeholder="Pièces prioritaires, particularités…" />
+          </div>
+        </div>
+
+        <div style="display:flex;gap:10px;align-items:center;margin-top:8px">
+          <input id="okSansContact" type="checkbox" required />
+          <label for="okSansContact">Je confirme avoir compris que la prestation est <strong>strictement sans contact</strong> et respectueuse des limites.</label>
+        </div>
+
+        <div class="cta" style="margin-top:12px">
+          <button class="btn" type="submit">Envoyer la demande</button>
+          <button class="btn ghost" type="button" id="btnIcs" disabled>Ajouter au calendrier (.ics)</button>
+          <button class="btn ghost" type="button" id="btnTxt" disabled>Télécharger le résumé (.txt)</button>
+        </div>
+
+        <div id="rdvStatus" class="card state" style="margin-top:12px;display:none">
+          <h3>Résumé de votre demande</h3>
+          <div id="rdvSummary" class="note"></div>
+        </div>
+      </form>
+    </section>
+
+    <section class="card" id="zone" style="margin-top:18px">
       <h2>Zone desservie</h2>
-      <p><strong>Montréal et environs</strong> (déplacements possibles selon disponibilité). Indiquez votre quartier lors du premier message.</p>
+      <p><strong>Montréal et environs</strong> (déplacements possibles selon disponibilité). Mentionnez votre quartier lors de la demande.</p>
     </section>
 
-    <section class="card" id="contact" style="margin-top:16px">
+    <section class="card" id="faq" style="margin-top:18px">
+      <h2>FAQ & Politiques</h2>
+      <div class="policy">
+        <p><strong>Sans contact :</strong> la prestation est strictement visuelle. Aucun contact physique, aucune nudité explicite. L’élégance et la discrétion priment.</p>
+        <p><strong>Tarifs :</strong> communiqués en privé selon la durée, le type de service et la zone. <em>Rendre l’utile à l’agréable</em>, toujours avec transparence.</p>
+        <p><strong>Réservation :</strong> une confirmation par message est nécessaire après l’envoi du formulaire. Les demandes incomplètes ne sont pas traitées.</p>
+        <p><strong>Annulation :</strong> merci d’aviser 24 h à l’avance. Les annulations tardives peuvent entraîner des frais.</p>
+        <p><strong>Confidentialité :</strong> vos informations ne sont utilisées que pour organiser le rendez-vous. Aucune donnée n’est partagée.</p>
+        <p><strong>Limites :</strong> je me réserve le droit de refuser toute demande non conforme à la charte (respect, sécurité, discrétion).</p>
+      </div>
+    </section>
+
+    <section class="card" id="contact" style="margin-top:18px">
       <h2>Contact</h2>
       <form id="contactForm" novalidate>
-        <div style="display:grid;gap:12px">
+        <div class="row">
           <div>
             <label for="nom">Votre prénom</label>
             <input id="nom" name="nom" type="text" placeholder="Alex" required />
@@ -117,17 +267,19 @@
             <label for="ville">Quartier / Ville</label>
             <input id="ville" name="ville" type="text" placeholder="Plateau, Montréal" required />
           </div>
-          <div>
-            <label for="message">Votre message</label>
-            <textarea id="message" name="message" rows="4" placeholder="Disponibilités, préférences, questions…" required></textarea>
-          </div>
-          <div style="display:flex;gap:10px;align-items:center">
-            <input id="ok" type="checkbox" required />
-            <label for="ok">Je confirme avoir compris que la prestation est <strong>sans contact</strong>.</label>
-          </div>
-          <button class="btn" type="submit">Envoyer la demande</button>
-          <p id="formNote" class="note">Réponse en privé avec les informations utiles. Merci !</p>
         </div>
+        <div style="margin-top:8px">
+          <label for="message">Votre message</label>
+          <textarea id="message" name="message" rows="4" placeholder="Disponibilités, préférences, questions…" required></textarea>
+        </div>
+        <div style="display:flex;gap:10px;align-items:center;margin-top:8px">
+          <input id="ok" type="checkbox" required />
+          <label for="ok">Je confirme avoir compris que la prestation est <strong>sans contact</strong>.</label>
+        </div>
+        <div class="cta" style="margin-top:12px">
+          <button class="btn" type="submit">Envoyer</button>
+        </div>
+        <p id="formNote" class="note">Réponse en privé avec les informations utiles. Merci !</p>
       </form>
     </section>
 
@@ -138,66 +290,268 @@
 
   <footer>
     <div class="wrap center">
-      <p class="note">Charte : élégance, discrétion, respect des limites. Besoin d’un visuel/logo ? Demandez-moi.</p>
+      <p class="note">Charte : élégance, discrétion, respect des limites. Besoin d’un visuel/logo&nbsp;? Demandez-moi.</p>
     </div>
   </footer>
 
   <script>
-    // Utilitaires légers (un seul script comme demandé)
+    // ======= App Ménage Piquant — 2025 — un seul script =======
     (function(){
-      // Année dynamique
-      document.getElementById('year').textContent = new Date().getFullYear();
+      const $ = (sel, root=document)=>root.querySelector(sel);
+      const $$ = (sel, root=document)=>Array.from(root.querySelectorAll(sel));
 
-      // Défilement doux pour les ancres
-      document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      // Année dynamique
+      $('#year').textContent = '2025';
+
+      // Défilement doux
+      $$('a[href^="#"]').forEach(a=>{
         a.addEventListener('click', e=>{
           const id = a.getAttribute('href').slice(1);
           const el = document.getElementById(id);
-          if(el){
-            e.preventDefault();
-            el.scrollIntoView({behavior:'smooth', block:'start'});
-          }
+          if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
         });
       });
 
-      // Validation simple du formulaire (sans envoi réseau)
-      const form = document.getElementById('contactForm');
-      const note = document.getElementById('formNote');
-      form.addEventListener('submit', function(e){
+      // ---- Contact form (bas de page)
+      const contactForm = $('#contactForm');
+      const contactNote = $('#formNote');
+      contactForm.addEventListener('submit', (e)=>{
         e.preventDefault();
-        const data = new FormData(form);
-        const requiredOk = document.getElementById('ok').checked;
-        const valid = ['nom','ville','message'].every(k=> (data.get(k)||'').trim().length>1) && requiredOk;
+        const data = new FormData(contactForm);
+        const ok = $('#ok').checked;
+        const valid = ['nom','ville','message'].every(k => (data.get(k)||'').trim().length>1) && ok;
 
         if(!valid){
-          note.textContent = "Oups — merci de compléter tous les champs et de confirmer le sans contact.";
-          note.parentElement.classList.remove('ok'); note.parentElement.classList.add('err');
+          contactNote.textContent = "Oups — merci de compléter tous les champs et de confirmer le sans contact.";
+          contactForm.classList.remove('state','ok'); contactForm.classList.add('state','err');
           return;
         }
-
-        // Ici tu peux connecter un service d'email / webhook si tu veux
         const payload = {
           nom: data.get('nom').trim(),
           ville: data.get('ville').trim(),
           message: data.get('message').trim(),
-          sansContact: requiredOk,
+          sansContact: ok,
           date: new Date().toISOString()
         };
+        contactNote.textContent = "Merci ! Votre message a été préparé. Ouvrez la console pour voir le détail. Je vous réponds en privé.";
+        contactForm.classList.remove('err'); contactForm.classList.add('state','ok');
+        console.log("CONTACT | Ménage Piquant:", payload);
 
-        // Feedback visuel local
-        note.textContent = "Merci ! Votre demande a été préparée. Ouvre la console pour voir le message généré.";
-        note.parentElement.classList.remove('err'); note.parentElement.classList.add('ok');
-
-        // Pour l’instant : on loggue la requête (aucun envoi)
-        console.log("NOUVELLE DEMANDE Ménage Piquant:", payload);
-
-        // Option : copier un brouillon de réponse dans le presse-papiers
+        // Brouillon de réponse (copie dans le presse-papiers si autorisé)
         const reply = `Bonjour ${payload.nom}, merci pour votre message !\\n` +
-                      `Je me déplace à ${payload.ville}. La prestation est sans contact. ` +
+                      `Je me déplace à ${payload.ville}. La prestation est strictement sans contact. ` +
                       `Je reviens vers vous en privé avec les disponibilités et les détails.`;
         navigator.clipboard && navigator.clipboard.writeText(reply).catch(()=>{});
-        form.reset();
+        contactForm.reset();
       });
+
+      // ---- RDV Form : contraintes de base
+      const rdvForm = $('#rdvForm');
+      const rdvStatus = $('#rdvStatus');
+      const rdvSummary = $('#rdvSummary');
+      const btnIcs = $('#btnIcs');
+      const btnTxt = $('#btnTxt');
+
+      // Min date = aujourd’hui
+      const dateInput = $('#date');
+      const today = new Date(); today.setHours(0,0,0,0);
+      const pad = n => String(n).padStart(2,'0');
+      dateInput.min = `${today.getFullYear()}-${pad(today.getMonth()+1)}-${pad(today.getDate())}`;
+
+      // Champs conditionnels selon méthode de contact
+      const contactMethod = $('#contactMethod');
+      const phone = $('#phone'); const email = $('#email');
+      const toggleContactFields = ()=>{
+        const m = contactMethod.value;
+        if(m === 'SMS' || m === 'Appel'){ phone.required = true; email.required = false; }
+        else if(m === 'Courriel'){ email.required = true; phone.required = false; }
+        else { phone.required = false; email.required = false; }
+      };
+      contactMethod.addEventListener('change', toggleContactFields);
+
+      // Soumission RDV
+      let lastRdv = null; // stock local pour .ics / .txt
+
+      rdvForm.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        const data = new FormData(rdvForm);
+
+        // Validation simple
+        const need = ['prenom','contactMethod','date','heure','duree','typeService','tenue','adresse'];
+        const missing = need.filter(k => !(data.get(k) && String(data.get(k)).trim().length));
+        const okSans = $('#okSansContact').checked;
+
+        // Contact selon méthode
+        toggleContactFields();
+        if(contactMethod.value === 'SMS' || contactMethod.value === 'Appel'){
+          if(!(phone.value && phone.value.trim().length>6)) missing.push('phone');
+        } else if(contactMethod.value === 'Courriel'){
+          if(!(email.value && email.value.includes('@'))) missing.push('email');
+        }
+
+        if(missing.length || !okSans){
+          rdvStatus.style.display = 'block';
+          rdvStatus.className = 'card state err';
+          rdvSummary.innerHTML = "Veuillez compléter tous les champs obligatoires et confirmer le <strong>sans contact</strong>.";
+          btnIcs.disabled = true; btnTxt.disabled = true;
+          return;
+        }
+
+        // Normalisation des données
+        const getMulti = (fd, name)=>[].concat(fd.getAll(name)||[]).filter(Boolean);
+        const entry = {
+          prenom: data.get('prenom').trim(),
+          contactMethod: data.get('contactMethod'),
+          phone: phone.value.trim(),
+          email: email.value.trim(),
+          date: data.get('date'),
+          heure: data.get('heure'),
+          duree: data.get('duree'),
+          typeService: data.get('typeService'),
+          tenue: data.get('tenue'),
+          ambiance: data.get('ambiance'),
+          addOns: getMulti(data, 'addOns'),
+          adresse: data.get('adresse').trim(),
+          instructions: (data.get('instructions')||'').trim(),
+          sansContact: true,
+          createdAt: new Date().toISOString()
+        };
+
+        // Résumé convivial
+        const parts = [
+          `<strong>${entry.prenom}</strong>, voici le résumé de votre demande :`,
+          `• Rendez-vous souhaité le <strong>${formatDateFr(entry.date)}</strong> à <strong>${entry.heure}</strong>`,
+          `• Durée : <strong>${entry.duree}</strong> • Service : <strong>${entry.typeService}</strong>`,
+          `• Tenue : <strong>${entry.tenue}</strong> • Ambiance : <strong>${entry.ambiance}</strong>`,
+          entry.addOns.length ? `• Options : ${entry.addOns.join(', ')}` : null,
+          `• Adresse : ${entry.adresse}`,
+          entry.instructions ? `• Notes : ${entry.instructions}` : null,
+          `• Contact : ${entry.contactMethod} ${entry.phone?('— '+entry.phone):''} ${entry.email?('— '+entry.email):''}`,
+          `• Rappel : prestation <strong>strictement sans contact</strong>.`
+        ].filter(Boolean);
+
+        rdvStatus.style.display = 'block';
+        rdvStatus.className = 'card state ok';
+        rdvSummary.innerHTML = parts.map(p=>`<p>${p}</p>`).join('');
+
+        lastRdv = entry;
+        btnIcs.disabled = false; btnTxt.disabled = false;
+
+        console.log("RDV | Ménage Piquant:", entry);
+
+        // Copie d’un message accusé de réception
+        const ack = `Bonjour ${entry.prenom}, merci pour votre demande du ${formatDateFr(entry.date)} à ${entry.heure}. ` +
+                    `Je vous recontacte en privé pour confirmer l'horaire et les détails. ` +
+                    `Rappel : prestation strictement sans contact. — Ménage Piquant`;
+        navigator.clipboard && navigator.clipboard.writeText(ack).catch(()=>{});
+      });
+
+      // Téléchargement TXT du résumé
+      btnTxt.addEventListener('click', ()=>{
+        if(!lastRdv) return;
+        const text = buildTxt(lastRdv);
+        downloadBlob(new Blob([text], {type:'text/plain;charset=utf-8'}), `menage-piquant-rdv-${lastRdv.date}.txt`);
+      });
+
+      // Génération .ics (iCalendar)
+      btnIcs.addEventListener('click', ()=>{
+        if(!lastRdv) return;
+        const ics = buildICS(lastRdv);
+        downloadBlob(new Blob([ics], {type:'text/calendar;charset=utf-8'}), `menage-piquant-${lastRdv.date}.ics`);
+      });
+
+      // Utilitaires
+      function formatDateFr(yyyy_mm_dd){
+        const [y,m,d] = yyyy_mm_dd.split('-').map(Number);
+        const dt = new Date(y, m-1, d);
+        return dt.toLocaleDateString('fr-CA', {weekday:'long', day:'2-digit', month:'long', year:'numeric'});
+      }
+      function buildTxt(e){
+        return [
+          'Ménage Piquant — Demande de rendez-vous',
+          '---------------------------------------',
+          `Nom: ${e.prenom}`,
+          `Date: ${formatDateFr(e.date)}  Heure: ${e.heure}`,
+          `Durée: ${e.duree}`,
+          `Service: ${e.typeService}`,
+          `Tenue: ${e.tenue}`,
+          `Ambiance: ${e.ambiance}`,
+          `Options: ${e.addOns.length?e.addOns.join(', '):'Aucune'}`,
+          `Adresse: ${e.adresse}`,
+          `Notes: ${e.instructions || '—'}`,
+          `Contact: ${e.contactMethod} ${e.phone?(' | '+e.phone):''} ${e.email?(' | '+e.email):''}`,
+          `Sans contact: Oui`,
+          `Créé le: ${new Date().toLocaleString('fr-CA')}`
+        ].join('\\n');
+      }
+      function toUtcStamp(dateStr, timeStr, hours=0, mins=0){
+        // Convertit local -> UTC format YYYYMMDDTHHMMSSZ
+        // timeStr attendu "HH:MM"
+        const [h,m] = timeStr.split(':').map(Number);
+        const [Y,M,D] = dateStr.split('-').map(Number);
+        const start = new Date(Y, (M-1), D, h+(hours||0), m+(mins||0), 0);
+        const yyyy = start.getUTCFullYear();
+        const mm = String(start.getUTCMonth()+1).padStart(2,'0');
+        const dd = String(start.getUTCDate()).padStart(2,'0');
+        const HH = String(start.getUTCHours()).padStart(2,'0');
+        const MM = String(start.getUTCMinutes()).padStart(2,'0');
+        const SS = '00';
+        return `${yyyy}${mm}${dd}T${HH}${MM}${SS}Z`;
+      }
+      function parseDuration(d){
+        // "1 h", "1 h 30", "2 h", "3 h"
+        const m = d.match(/(\\d+)\\s*h(?:\\s*(\\d+))?/);
+        if(!m) return 60;
+        const h = parseInt(m[1],10); const min = parseInt(m[2]||'0',10);
+        return (h*60)+min;
+      }
+      function addMinutes(timeStr, mins){
+        const [H,M] = timeStr.split(':').map(Number);
+        const t = new Date(); t.setHours(H, M+mins, 0, 0);
+        return String(t.getHours()).padStart(2,'0')+':'+String(t.getMinutes()).padStart(2,'0');
+      }
+      function buildICS(e){
+        const durationMin = parseDuration(e.duree);
+        const endTime = addMinutes(e.heure, durationMin);
+        const dtStart = toUtcStamp(e.date, e.heure);
+        const dtEnd = toUtcStamp(e.date, endTime);
+        const uid = `mp-${e.date}-${e.heure.replace(':','')}-${Math.random().toString(36).slice(2,8)}@menagepiquant`;
+        const now = toUtcStamp(new Date().toISOString().slice(0,10), new Date().toTimeString().slice(0,5));
+        const desc = [
+          'Ménage Piquant — Rendez-vous',
+          `Service: ${e.typeService}`,
+          `Tenue: ${e.tenue}`,
+          `Ambiance: ${e.ambiance}`,
+          `Options: ${e.addOns.length?e.addOns.join(', '):'Aucune'}`,
+          `Sans contact: Oui`,
+          `Notes: ${e.instructions || '—'}`
+        ].join('\\n');
+
+        return [
+          'BEGIN:VCALENDAR',
+          'VERSION:2.0',
+          'PRODID:-//Ménage Piquant//RDV 2025//FR',
+          'CALSCALE:GREGORIAN',
+          'METHOD:PUBLISH',
+          'BEGIN:VEVENT',
+          `UID:${uid}`,
+          `DTSTAMP:${now}`,
+          `DTSTART:${dtStart}`,
+          `DTEND:${dtEnd}`,
+          `SUMMARY:Ménage Piquant — ${e.typeService}`,
+          `LOCATION:${escapeIcs(e.adresse)}`,
+          `DESCRIPTION:${escapeIcs(desc)}`,
+          'END:VEVENT',
+          'END:VCALENDAR'
+        ].join('\\r\\n');
+      }
+      function escapeIcs(s){ return String(s||'').replace(/[\\\\;,\\n]/g, m=>({ '\\\\':'\\\\\\\\',';':'\\;','\\,':'\\,','\\n':'\\n' }[m]||m)); }
+      function downloadBlob(blob, filename){
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url; a.download = filename; a.click();
+        setTimeout(()=>URL.revokeObjectURL(url), 2000);
+      }
     })();
   </script>
 </body>
